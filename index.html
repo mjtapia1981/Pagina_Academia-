@@ -965,92 +965,72 @@
 
                     <div class="card-body p-4">
 
-                        <form>
+<form action="https://formspree.io/f/xbgrzwqd" method="POST">
 
-                            <div class="mb-3">
+    <div class="mb-3">
+        <label class="form-label">
+            Nombre
+        </label>
+        <input type="text"
+               name="nombre"
+               class="form-control"
+               required>
+    </div>
 
-                                <label class="form-label">
+    <div class="mb-3">
+        <label class="form-label">
+            Email
+        </label>
+        <input type="email"
+               name="email"
+               class="form-control"
+               required>
+    </div>
 
-                                    Nombre
+    <div class="mb-3">
+        <label class="form-label">
+            Teléfono
+        </label>
+        <input type="text"
+               name="telefono"
+               class="form-control"
+               required>
+    </div>
 
-                                </label>
+    <div class="mb-3">
+        <label class="form-label">
+            Materia de interés
+        </label>
+        <select name="materia" class="form-select" required>
+            <option value="">Seleccioná una materia</option>
+            <option>Matemática</option>
+            <option>Estadística</option>
+            <option>Álgebra</option>
+            <option>Contabilidad</option>
+            <option>Costos</option>
+            <option>Impuestos</option>
+            <option>Economía</option>
+            <option>Finanzas</option>
+            <option>Administración</option>
+        </select>
+    </div>
 
-                                <input type="text"
-                                       class="form-control">
+    <div class="mb-3">
+        <label class="form-label">
+            Mensaje
+        </label>
+        <textarea name="mensaje"
+                  class="form-control"
+                  rows="5"
+                  required></textarea>
+    </div>
 
-                            </div>
+    <button type="submit"
+            class="btn btn-primary w-100">
+        Enviar Consulta
+    </button>
 
-                            <div class="mb-3">
-
-                                <label class="form-label">
-
-                                    Email
-
-                                </label>
-
-                                <input type="email"
-                                       class="form-control">
-
-                            </div>
-
-                            <div class="mb-3">
-
-                                <label class="form-label">
-
-                                    Teléfono
-
-                                </label>
-
-                                <input type="text"
-                                       class="form-control">
-
-                            </div>
-
-                            <div class="mb-3">
-
-                                <label class="form-label">
-
-                                    Materia de interés
-
-                                </label>
-
-                                <select class="form-select">
-
-                                    <option>Matemática</option>
-                                    <option>Estadística</option>
-                                    <option>Álgebra</option>
-                                    <option>Contabilidad</option>
-                                    <option>Costos</option>
-                                    <option>Impuestos</option>
-                                    <option>Economía</option>
-                                    <option>Finanzas</option>
-                                    <option>Administración</option>
-
-                                </select>
-
-                            </div>
-
-                            <div class="mb-3">
-
-                                <label class="form-label">
-
-                                    Mensaje
-
-                                </label>
-
-                                <textarea class="form-control"
-                                          rows="5"></textarea>
-
-                            </div>
-
-                            <button type="submit"
-                                    class="btn btn-primary w-100">
-
-                                Enviar Consulta
-
-                            </button>
-
-                        </form>
+</form>
 
                     </div>
 
