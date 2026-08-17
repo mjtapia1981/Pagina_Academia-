@@ -1,0 +1,639 @@
+
+/* ============================================ */
+/* ESTILOS GENERALES */
+/* ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    padding-top: 70px;
+}
+
+/* ============================================ */
+/* MODO OSCURO */
+/* ============================================ */
+
+body.dark-mode {
+    background-color: #1a1a2e;
+    color: #eee;
+}
+
+body.dark-mode .bg-light {
+    background-color: #16213e !important;
+}
+
+body.dark-mode .card {
+    background-color: #0f3460;
+    color: #eee;
+}
+
+body.dark-mode .text-muted {
+    color: #ccc !important;
+}
+
+/* ============================================ */
+/* NAVBAR */
+/* ============================================ */
+
+.navbar-custom {
+    background: linear-gradient(135deg, #0a2b44 0%, #0d3b5e 100%);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.navbar-brand i {
+    font-size: 1.8rem;
+    color: #ffcc00;
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover i {
+    transform: rotate(-5deg) scale(1.1);
+}
+
+.brand-text {
+    background: linear-gradient(135deg, #ffffff 0%, #ffcc00 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover .brand-text {
+    background: linear-gradient(135deg, #ffcc00 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.nav-item {
+    margin: 0 5px;
+    position: relative;
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-link i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffcc00 !important;
+    transform: translateY(-2px);
+}
+
+.nav-link:hover i {
+    transform: translateY(-2px) scale(1.1);
+    color: #ffcc00;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ffcc00, #ffaa00);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 80%;
+}
+
+.btn-dark-mode {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.btn-dark-mode:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(15deg) scale(1.1);
+    border-color: #ffcc00;
+}
+
+.btn-dark-mode i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-dark-mode:hover i {
+    transform: rotate(360deg);
+}
+
+.navbar-toggler {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+}
+
+.navbar-toggler:hover {
+    border-color: #ffcc00;
+    transform: scale(1.05);
+}
+
+.navbar-custom.scrolled {
+    background: linear-gradient(135deg, #051b2e 0%, #0a2b44 100%);
+    padding: 0.5rem 0;
+}
+
+@media (max-width: 991px) {
+    .navbar-custom {
+        padding: 0.8rem 0;
+    }
+    
+    .nav-item {
+        margin: 5px 0;
+        text-align: center;
+    }
+    
+    .nav-link {
+        justify-content: center;
+        padding: 0.8rem !important;
+    }
+    
+    .btn-dark-mode {
+        margin: 10px auto 0;
+    }
+    
+    .collapse.show {
+        background: linear-gradient(135deg, #0a2b44 0%, #0d3b5e 100%);
+        border-radius: 10px;
+        margin-top: 1rem;
+        padding: 1rem;
+    }
+}
+
+.nav-link.active {
+    color: #ffcc00 !important;
+}
+
+/* ============================================ */
+/* CAROUSEL */
+/* ============================================ */
+
+#inicio {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#heroCarousel {
+    width: 100%;
+    height: 85vh;
+    min-height: 700px;
+    overflow: hidden;
+}
+
+#heroCarousel .carousel-inner,
+#heroCarousel .carousel-item {
+    height: 100%;
+}
+
+#heroCarousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.55);
+}
+
+/* TEXTO DEL CAROUSEL */
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: auto;
+    right: auto;
+    width: 90%;
+    text-align: center;
+    z-index: 10;
+}
+
+.carousel-caption h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.carousel-caption p {
+    font-size: 1.5rem;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.5);
+}
+
+.carousel-caption .btn {
+    margin-top: 15px;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+}
+
+.carousel-item {
+    position: relative;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    #heroCarousel {
+        height: 60vh;
+        min-height: 450px;
+    }
+
+    .carousel-caption h1 {
+        font-size: 2.2rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+}
+
+/* ============================================ */
+/* TÍTULOS */
+/* ============================================ */
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    position: relative;
+    color: #0a2b44;
+}
+
+.section-title::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: #ffcc00;
+    display: block;
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+body.dark-mode .section-title {
+    color: #ffcc00;
+}
+
+/* ============================================ */
+/* TARJETAS DE MATERIAS */
+/* ============================================ */
+
+.card-hover {
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.card h4 {
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+/* ============================================ */
+/* TARJETAS DE PRECIOS - DEFINITIVO */
+/* ============================================ */
+
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* efecto hover moderno */
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* cuerpo de la card */
+.pricing-card .card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 2rem 1.5rem;
+}
+
+/* precio */
+.pricing-card h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+/* lista */
+.pricing-card ul {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.pricing-card ul li {
+    padding: 6px 0;
+    font-size: 0.95rem;
+}
+
+/* botón siempre abajo */
+.pricing-card button {
+    margin-top: auto;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+/* PLAN DESTACADO (premium) */
+.pricing-popular {
+    border: 2px solid #198754;
+    transform: scale(1.03);
+}
+
+.pricing-popular:hover {
+    transform: scale(1.05) translateY(-8px);
+}
+
+/* header más prolijo */
+.pricing-card .card-header {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    padding: 12px;
+}
+/* ============================================ */
+/* PROFESORES */
+/* ============================================ */
+
+.teacher-card img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.teacher-card h4 {
+    color: #0a2b44;
+    font-weight: bold;
+}
+
+body.dark-mode .teacher-card h4 {
+    color: #ffcc00;
+}
+
+/* ============================================ */
+/* TESTIMONIOS */
+/* ============================================ */
+
+.testimonial-card {
+    min-height: 200px;
+}
+
+/* ============================================ */
+/* FOOTER */
+/* ============================================ */
+
+.footer-custom {
+    background: #0a2b44;
+    color: white;
+    padding: 3rem 0 1rem;
+    margin-top: 2rem;
+}
+
+.footer-custom h3 {
+    color: #ffcc00;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-custom h5 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-custom p {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.footer-custom ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-custom ul li a:hover {
+    color: #ffcc00;
+}
+
+.footer-custom .social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-custom .social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.footer-custom .social-icons .facebook {
+    background: #1877f2;
+    color: white;
+}
+
+.footer-custom .social-icons .instagram {
+    background: #e4405f;
+    color: white;
+}
+
+.footer-custom .social-icons a:hover {
+    transform: translateY(-5px);
+}
+
+.footer-custom hr {
+    margin: 1.5rem 0;
+    border-color: rgba(255,255,255,0.2);
+}
+
+.footer-custom .text-center p {
+    color: #999;
+    font-size: 0.8rem;
+}
+
+/* ============================================ */
+/* WHATSAPP FLOTANTE */
+/* ============================================ */
+
+#whatsappBtn {
+    position: fixed !important;
+    bottom: 25px !important;
+    right: 25px !important;
+
+    width: 65px;
+    height: 65px;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    background: #25d366;
+    color: #ffffff !important;
+
+    border-radius: 50%;
+    text-decoration: none !important;
+
+    font-size: 2rem;
+    line-height: 1;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.30);
+
+    z-index: 999999 !important;
+
+    transition: all 0.3s ease;
+}
+
+#whatsappBtn:hover {
+    background: #1ebe5d;
+    color: #ffffff !important;
+    transform: scale(1.10);
+}
+
+#whatsappBtn i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Celulares */
+
+@media (max-width: 768px) {
+    #whatsappBtn {
+        width: 55px;
+        height: 55px;
+        font-size: 1.7rem;
+        bottom: 20px !important;
+        right: 20px !important;
+    }
+}
+
+/* ============================================ */
+/* BOTON VOLVER ARRIBA */
+/* ============================================ */
+
+#btnTop {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #0d6efd;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: none;
+    z-index: 99999;
+    transition: all 0.3s;
+}
+
+#btnTop:hover {
+    background: #0a58ca;
+    transform: translateY(-5px);
+}
+
+/* ============================================ */
+/* FORMULARIO */
+/* ============================================ */
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #ffcc00;
+    box-shadow: 0 0 0 0.2rem rgba(255, 204, 0, 0.25);
+}
+
+/* ============================================ */
+/* RESPONSIVE */
+/* ============================================ */
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .teacher-card img {
+        height: 250px;
+    }
+    
+    .footer-custom .row {
+        text-align: center;
+    }
+    
+    .footer-custom .social-icons {
+        justify-content: center;
+    }
+    
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.6rem;
+    }
+    
+    #btnTop {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+}
